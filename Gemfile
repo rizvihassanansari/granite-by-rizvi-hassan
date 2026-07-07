@@ -3,7 +3,6 @@ source "https://rubygems.org"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.0"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
-gem "propshaft"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 2.1"
 # Use the Puma web server [https://github.com/puma/puma]
@@ -59,3 +58,7 @@ group :test do
 end
 
 gem "responders"
+gem 'react-rails', "~> 2.7.1"
+gem "connection_pool", "~> 2.4"
+gem "sprockets"
+gem "sprockets-rails"
