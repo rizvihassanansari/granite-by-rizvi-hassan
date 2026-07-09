@@ -13,7 +13,7 @@ const Form = ({ type = "create", title, setTitle, loading, handleSubmit }) => (
     <Button
       buttonText={type === "create" ? "Create Task" : "Update Task"}
       loading={loading}
-      type="button"
+      type="submit"
     />
   </form>
 );
