@@ -50,8 +50,6 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "rubocop", require: false
-  gem "rubocop-rails", require: false
   gem "web-console"
 end
 
@@ -59,9 +57,12 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "erb_lint", require: false, git: "https://github.com/Shopify/erb-lint.git", branch: "main"
+  gem "selenium-webdriver"
+end
+
+group :development, :test do
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
-  gem "selenium-webdriver"
 end
 
 gem "connection_pool", "~> 2.4"
