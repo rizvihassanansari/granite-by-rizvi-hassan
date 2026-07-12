@@ -65,6 +65,7 @@ group :development, :test do
   gem "rubocop-rails", require: false
 end
 
+gem "bcrypt", "~> 3.1.13"
 gem "connection_pool", "~> 2.4"
 gem "data_migrate"
 gem "pry-byebug"
