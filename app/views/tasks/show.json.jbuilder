@@ -24,4 +24,9 @@ json.task do
       :id,
       :name
   end
+
+  json.task_owner do
+    json.extract! @task.task_owner,
+      :name
+  end
 end
