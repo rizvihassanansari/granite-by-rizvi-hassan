@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user_using_x_auth_token
   rescue_from StandardError, with: :handle_api_exception
 
+  include Pundit::Authorization
+
   def handle_api_exception(exception)
     case exception
     when -> (e) { e.message.include?("PG::") || e.message.include?("SQLite3::") }
@@ -63,6 +65,8 @@ class ApplicationController < ActionController::Base
     render status:, json:
   end
 
+  rescue_from Pundit::NotAuthorizedError, with: :handle_authorization_error
+
   private
 
     def authenticate_user_using_x_auth_token
@@ -77,6 +81,10 @@ class ApplicationController < ActionController::Base
       else
         render_error("Could not authenticate with the provided credentials", :unauthorized)
       end
+    end
+
+    def handle_authorization_error
+      render_error(t("authorization.denied"), :forbidden)
     end
 
     def current_user
