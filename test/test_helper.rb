@@ -19,11 +19,6 @@ enable_test_coverage if ENV["COVERAGE"]
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
-# Previous content of test helper as is
-
-ENV["RAILS_ENV"] ||= "test"
-require_relative "../config/environment"
-require "rails/test_help"
 
 module ActiveSupport
   class TestCase
