@@ -31,5 +31,7 @@ module Granite
 
     # Configure asset pipeline to use Sprockets
     config.assets.pipeline = :sprockets
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end
