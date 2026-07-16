@@ -93,6 +93,4 @@ class UserTest < ActiveSupport::TestCase
 
     assert_not_same @user.authentication_token, second_user.authentication_token
   end
-
-  # embed new test cases here...
 end
