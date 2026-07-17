@@ -78,7 +78,7 @@ gem "pry-byebug"
 gem "pundit"
 gem "react-rails", "~> 2.7.1"
 gem "responders"
-gem "sidekiq", "~> 7.0"
+gem "sidekiq", "~> 8.0"
 gem "simplecov", require: false, group: :test
 gem "sprockets"
 gem "sprockets-rails"
