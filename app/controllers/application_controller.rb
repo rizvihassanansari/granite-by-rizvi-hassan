@@ -10,24 +10,10 @@ class ApplicationController < ActionController::Base
 
   def handle_api_exception(exception)
     case exception
-    when -> (e) { e.message.include?("PG::") || e.message.include?("SQLite3::") }
-      handle_database_level_exception(exception)
-
-    when ActionController::ParameterMissing
-      render_error(exception, :internal_server_error)
+    # rest of the exception cases
 
     when ActiveRecord::RecordNotFound
-      render_error("Couldn't find #{exception.model}", :not_found)
-
-    when ActiveRecord::RecordNotUnique
-      render_error(exception.message)
-
-    when ActiveModel::ValidationError, ActiveRecord::RecordInvalid, ArgumentError
-      error_message = exception.message.gsub("Validation failed: ", "")
-      render_error(error_message, :unprocessable_entity)
-
-    else
-      handle_generic_exception(exception)
+      render_error(t("not_found", entity: exception.model), :not_found)
     end
   end
 
