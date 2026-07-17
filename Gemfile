@@ -76,7 +76,7 @@ gem "data_migrate"
 gem "minitest-bisect"
 gem "pry-byebug"
 gem "pundit"
-gem "react-rails", "~> 2.7.1"
+gem "react-rails", "~> 3.3.1"
 gem "responders"
 gem "sidekiq", "~> 7.0"
 gem "simplecov", require: false, group: :test
